@@ -7,7 +7,9 @@ const patientRoutes = require('./routes/route.js');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.get('/', (req, res) => {
+  res.send('Welcome to Health Tracker API');
+});
 app.use('/api', patientRoutes);
 
 app.listen(port, () => {
