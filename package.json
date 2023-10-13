@@ -4,8 +4,9 @@
   "description": "Tracking patient's heart conditions",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run dev"
+   "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run dev",
+    "start":"node app.js"
   },
   "repository": {
     "type": "git",
