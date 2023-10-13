@@ -11,5 +11,22 @@ const savePatientData = (req, res) => {
     }
   });
 };
-
-module.exports = { savePatientData };
+const getPatientData = (patientNID, callback) => {
+  db.get(
+    'SELECT * FROM patient_data WHERE patient_NID = ?',
+    [patientNID],
+    (err, row) => {
+      if (err) {
+        console.error(err.message);
+        callback(err, null);
+      } else {
+        if (row) {
+          callback(null, row);
+        } else {
+          callback(null, null);
+        }
+      }
+    }
+  );
+};
+module.exports = { savePatientData,getPatientData };
